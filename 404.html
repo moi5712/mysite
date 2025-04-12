@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Page not found</title>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<meta property="og:title" content="404 Page not found" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="http://localhost:1313/default.png" />
+<meta property="og:image:type" content='image/png' />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/404.html" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="404 Page not found" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="http://localhost:1313/default.png" />
+<meta name="author" content="" />
+    <meta name="description" content="" />
+
+    <link rel="preload" href="/fonts/Newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Newsreader-italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script src="/js/init-darkmode.js" defer></script>
+    <script src="/js/darkmode.js" defer></script>
+    <script src="/js/footnotes.js" defer></script>
+</head>
+
+  <meta charset="UTF-8">
+  <title>404 - 找不到頁面</title>
+  <style>
+    
+    body {
+      color: var(--text-color);
+      text-align: center;
+      padding: 50px;
+    }
+    .text-block {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.8;
+    }
+    .draggable {
+      display: inline-block;
+      cursor: grab;
+      color: var(--notfound-text);
+      user-select: none;
+      font-size: inherit;
+    }
+    
+    .dropzone {
+      display: inline-block;
+      font-size: inherit;
+      vertical-align: bottom;
+      min-width: 1em;
+      min-height: 1.2em;
+    }
+    #drop-area .dropzone {
+      width: 50px;
+      height: 30px;
+      margin: 5px;
+      border-bottom: 1px solid #ccc;
+      font-size: 18px;
+    }
+    #drop-area {
+      margin-top: 40px;
+    }
+    #home-btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      visibility: hidden;  
+      background: #d18f8d;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      opacity: 0;
+      filter: blur(5px);  
+      transition: opacity 3s ease, filter 3s ease;  
+    }
+    #home-btn.show {
+      visibility: visible;
+      cursor: pointer;
+      opacity: 1;
+      filter: blur(0px);  
+    }
+    .placeholder {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+    }
+    .draggable:active {
+      cursor: grabbing;
+    }
+  </style>
+</head>
+<body>
+  <main>
+      <div class="text-block" id="text-content">
+      <h2>404:NOT FOUND</h2>
+      <p>
+        抱歉，我們找不到你要的頁面。也許它已經消失，或者從未存在。<br>
+你好，陌生人。我不知道你是誰，來自什麼國<span class="dropzone" data-index="t3" data-original="家">家</span>，有著什麼過去，但這並不重<span class="dropzone" data-index="t1" data-original="要">要</span>。<br>
+在這無盡的網海裡，你<span class="dropzone" data-index="t0" data-original="我">我</span>本是過客，但自從相遇的那一刻起，一切便有了意義。 <br>
+這裡空無一物，但若你<span class="dropzone" data-index="t2" data-original="回">回</span>頭看看，也許會發現一些線索。<br><br>
+當然，也可能一切只是個無聊的玩笑。
+      </p>
+    </div>
+
+    <div id="drop-area">
+      <div class="dropzone" data-index="0"></div>
+      <div class="dropzone" data-index="1"></div>
+      <div class="dropzone" data-index="2"></div>
+      <div class="dropzone" data-index="3"></div>
+    </div>
+
+    <button id="home-btn" onclick="location.href='/'">回家</button>
+  </main>
+  
+
+  <script>
+    const correctOrder = ['我', '要', '回', '家'];
+    const dropzones = document.querySelectorAll('.dropzone');
+    const homeBtn = document.getElementById('home-btn');
+    let isLocked = false;
+
+    dropzones.forEach(zone => {
+      zone.addEventListener('dragover', e => e.preventDefault());
+      zone.addEventListener('drop', e => {
+        if (isLocked) return; 
+        e.preventDefault();
+        const word = e.dataTransfer.getData('text');
+        const fromId = e.dataTransfer.getData('from');
+
+        if (zone.querySelector('.draggable')) return;
+
+        const dragged = document.getElementById(fromId);
+        if (dragged) dragged.remove();
+
+        const span = document.createElement('span');
+        span.textContent = word;
+        span.className = 'draggable';
+        span.draggable = true;
+        span.id = fromId;
+        span.dataset.word = word;
+        span.addEventListener('dragstart', dragStartHandler);
+        zone.innerHTML = '';
+        zone.appendChild(span);
+
+        checkAllCorrect();
+      });
+    });
+
+    function dragStartHandler(e) {
+      e.dataTransfer.setData('text', e.target.dataset.word);
+      e.dataTransfer.setData('from', e.target.id);
+    }
+
+    function checkAllCorrect() {
+      const answer = correctOrder;
+      const bottom = Array.from(document.querySelectorAll('#drop-area .dropzone')).map(z => z.textContent.trim());
+      const correct = bottom.every((val, i) => val === answer[i]);
+      if (correct) {
+        homeBtn.classList.add('show');
+        isLocked = true;
+      } else {
+        homeBtn.classList.remove('show');
+        isLocked = false;
+      }
+    }
+
+    
+    document.querySelectorAll('#text-content .dropzone').forEach((el, i) => {
+      const char = el.dataset.original;
+      el.textContent = '';
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.className = 'draggable';
+      span.draggable = true;
+      span.id = 'word-' + i;
+      span.dataset.word = char;
+      span.addEventListener('dragstart', dragStartHandler);
+      el.appendChild(span);
+    });
+    
+  </script>
+
+</body>
+</html>

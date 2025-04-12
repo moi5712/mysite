@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <link rel="stylesheet" href="/css/styles.css">
+</head>
+      
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>來畫畫</title>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<meta property="og:title" content="來畫畫" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="http://localhost:1313/og/og-image-77dcb8b2ba5685bc501ca69ca8c57c13.svg" />
+<meta property="og:image:type" content='image/svg&#43;xml' />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/canva/" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="來畫畫" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="http://localhost:1313/og/og-image-77dcb8b2ba5685bc501ca69ca8c57c13.svg" />
+<meta name="author" content="" />
+    <meta name="description" content="" />
+
+    <link rel="preload" href="/fonts/Newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Newsreader-italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script src="/js/init-darkmode.js" defer></script>
+    <script src="/js/darkmode.js" defer></script>
+    <script src="/js/footnotes.js" defer></script>
+</head>
+
+
+<body>
+
+    <header>
+    <div>
+        <h1>
+            <a href="http://localhost:1313/">文章存檔</a>
+        </h1>
+        <div class="header-controls">
+            <div class="toggle-switch">
+                <input 
+                    type="checkbox" 
+                    id="darkModeToggle" 
+                    class="toggle-input"
+                    aria-label="Toggle dark mode"
+                />
+                <label for="darkModeToggle" class="toggle-label">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="nav">              
+        
+        <a href="/">Home/</a>
+      
+        <a href="/about/">About/</a>
+      
+        <a href="/posts/">Posts/</a>
+                   
+    </div>
+
+
+</header>
+
+    
+    <main class="content-wrapper">
+        <article class="content-container">
+
+            <h2>來畫畫</h2>
+        
+            <h4></h4>
+
+          
+        </article>
+        
+        <!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>畫布</title>
+  <style>
+    canvas {
+      border: 1px solid var(--text-color);
+      cursor: crosshair;
+      width: 100%;
+    }
+
+    #brushSize {
+      margin-top: 10px;
+    }
+
+    #tools{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <canvas id="myCanvas" width="580" height="580"></canvas>
+  <div id="tools">
+      <input type="color" id="colorPicker" value="#000000"> 
+      <button id="clearButton">清除畫布</button>
+      <button id="eraserButton">切換為橡皮擦</button> 
+  </div>  
+
+  <label for="brushSize">畫　筆</label>
+  <input type="range" id="brushSize" min="1" max="30" value="1">
+  <span id="brushValue">1</span><span>px</span> 
+  <br>
+  <label for="eraserSize">橡皮擦</label>
+  <input type="range" id="eraserSize" min="1" max="30" value="5">
+  <span id="eraserValue">5</span><span>px</span> 
+  
+
+  
+  
+  
+  <br>
+  <button id="saveButton">保存畫布</button> 
+
+  <script>
+     const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    const clearButton = document.getElementById('clearButton');
+    const eraserButton = document.getElementById('eraserButton');
+    const brushSizeSlider = document.getElementById('brushSize');
+    const brushValue = document.getElementById('brushValue');
+    const eraserSizeSlider = document.getElementById('eraserSize');
+    const eraserValue = document.getElementById('eraserValue');
+    const colorPicker = document.getElementById('colorPicker');
+    const saveButton = document.getElementById('saveButton');
+    let drawing = false;
+    let erasing = false; 
+    let brushSize = brushSizeSlider.value;
+    let eraserSize = eraserSizeSlider.value;
+
+    
+    ctx.lineCap = 'round'; 
+    ctx.lineJoin = 'round'; 
+
+    
+    brushSizeSlider.addEventListener('input', () => {
+      brushSize = brushSizeSlider.value;
+      brushValue.textContent = brushSize; 
+      ctx.lineWidth = brushSize; 
+    });
+
+    
+    eraserSizeSlider.addEventListener('input', () => {
+    eraserSize = eraserSizeSlider.value;
+    eraserValue.textContent = eraserSize;
+    if (erasing) {
+    ctx.lineWidth = eraserSize; 
+    }
+    });
+
+    
+    colorPicker.addEventListener('input', (e) => {
+      ctx.strokeStyle = e.target.value; 
+    });
+
+    
+    canvas.addEventListener('mousedown', (e) => {
+      drawing = true;
+      ctx.beginPath();
+      ctx.moveTo(e.offsetX, e.offsetY);
+    });
+
+    
+    canvas.addEventListener('mousemove', (e) => {
+      if (drawing) {
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+      }
+    });
+
+    
+    canvas.addEventListener('mouseup', () => {
+      drawing = false;
+    });
+
+    
+    canvas.addEventListener('mouseout', () => {
+      drawing = false;
+    });
+
+    
+    eraserButton.addEventListener('click', () => {
+      erasing = !erasing;
+      if (erasing) {
+        ctx.globalCompositeOperation = 'destination-out'; 
+        eraserButton.textContent = '切換為畫筆'; 
+        ctx.lineWidth = eraserSize; 
+      } else {
+        ctx.globalCompositeOperation = 'source-over'; 
+        eraserButton.textContent = '切換為橡皮擦'; 
+        ctx.lineWidth = brushSize; 
+      }
+    });
+
+    
+    clearButton.addEventListener('click', () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+
+    
+    saveButton.addEventListener('click', () => {
+  
+  const tempCanvas = document.createElement('canvas');
+  const tempCtx = tempCanvas.getContext('2d');
+  
+  
+  tempCanvas.width = canvas.width;
+  tempCanvas.height = canvas.height;
+  
+  
+  tempCtx.fillStyle = '#FFFFFF';
+  tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+  
+  
+  tempCtx.drawImage(canvas, 0, 0);
+  
+  
+  const dataURL = tempCanvas.toDataURL('image/png');
+  const link = document.createElement('a');
+  link.href = dataURL;
+  link.download = 'my_drawing.png';
+  link.click();
+});
+
+
+window.addEventListener('keydown', (e) => {
+      if (e.key === 'e' || e.key === 'E') {
+        erasing = true;
+        ctx.globalCompositeOperation = 'destination-out';
+        eraserButton.textContent = '切換為畫筆';
+        ctx.lineWidth = eraserSize;
+      } else if (e.key === 'Delete') {
+        ctx.clearRect(0, 0, canvas.width, canvas.height); 
+      }
+    });
+
+    window.addEventListener('keyup', (e) => {
+      if (e.key === 'e' || e.key === 'E') {
+        erasing = false;
+        ctx.globalCompositeOperation = 'source-over'; 
+        eraserButton.textContent = '切換為橡皮擦';
+        ctx.lineWidth = brushSize; 
+      }
+    });
+
+    
+    ctx.lineWidth = brushSize;
+    ctx.strokeStyle = '#000000'; 
+  </script>
+
+</body>
+</html>
+
+
+    </main>
+
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2025 - 文章存檔</p>
+    </div>
+</footer>
+
+    
+</body>
+
+</html>

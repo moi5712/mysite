@@ -1,0 +1,25 @@
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+        <style>
+            @font-face {
+              font-family: 'Newsreader';
+              src: url('/fonts/Newsreader.woff2') format('woff2');
+            }
+            .title, .description {
+              font-family: 'Newsreader', serif;
+              fill: #141413;
+              text-anchor: start;
+              line-height: 1.1;
+            }
+        </style>
+        <rect width="1200" height="630" fill="#f0efea" />
+        <foreignObject x="80" y="200" width="840" height="300">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <div style="font-family: Newsreader, serif; font-size: 78px; font-weight: 600; margin-bottom: 20px; word-wrap: break-word;">沖土隨筆1</div>
+                <div style="font-family: Newsreader, serif; font-size: 70px; font-weight: 400; word-wrap: break-word;"><p>土方自從跟隨近藤一行人來到江戶後，就一直保有寫信的習慣，雖然武州已經沒有他認識的人了，按理來說是這樣。</p>
+<p>那些信一直都沒有被寄出去，只是默默地躺在屯所的某個角落。</p>
+<p>某天沖田又在混水摸魚，就這樣摸進土方的房間，邊尋思著著怎麼惡作劇，邊拉開角落櫃子裡的抽屜，卻一眼瞥見那疊一直沒寄出的，已經落灰的，寫著熟悉 …</p></div>
+            </div>
+        </foreignObject>
+    </svg>
+    

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <link rel="stylesheet" href="/css/styles.css">
+</head>
+      
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小遊戲</title>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<meta property="og:title" content="小遊戲" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="http://localhost:1313/og/og-image-a513bed39bd3398a9fed15de5978269c.svg" />
+<meta property="og:image:type" content='image/svg&#43;xml' />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/game/" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="小遊戲" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="http://localhost:1313/og/og-image-a513bed39bd3398a9fed15de5978269c.svg" />
+<meta name="author" content="" />
+    <meta name="description" content="" />
+
+    <link rel="preload" href="/fonts/Newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Newsreader-italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script src="/js/init-darkmode.js" defer></script>
+    <script src="/js/darkmode.js" defer></script>
+    <script src="/js/footnotes.js" defer></script>
+</head>
+
+
+<body>
+
+    <header>
+    <div>
+        <h1>
+            <a href="http://localhost:1313/">文章存檔</a>
+        </h1>
+        <div class="header-controls">
+            <div class="toggle-switch">
+                <input 
+                    type="checkbox" 
+                    id="darkModeToggle" 
+                    class="toggle-input"
+                    aria-label="Toggle dark mode"
+                />
+                <label for="darkModeToggle" class="toggle-label">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="nav">              
+        
+        <a href="/">Home/</a>
+      
+        <a href="/about/">About/</a>
+      
+        <a href="/posts/">Posts/</a>
+                   
+    </div>
+
+
+</header>
+
+    
+    <main class="content-wrapper">
+        <article class="content-container">
+
+            <h2>小遊戲</h2>
+        
+            <h4></h4>
+
+          
+        </article>
+        
+        
+        
+  <style>
+
+    .choices, #result, #timer, #retryBtn {
+      margin-top: 20px;
+    }
+    .choice-button, #retryBtn {
+      font-family: "Newsreader", "游明朝", serif;
+      font-size: 24px;
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    #retryBtn {
+      display: none;
+    }
+    #rock-paper-scissors{
+        text-align: center;
+        margin-top: 100px;
+    }
+  </style>
+<div id="rock-paper-scissors">
+    <h2>剪刀石頭布</h2>
+  <button id="startBtn">開始</button>
+
+  <div id="game" style="display:none;">
+    <div id="timer">倒數：3</div>
+    <div class="choices">
+      <button class="choice-button" data-choice="✌剪刀">✌ 剪刀</button>
+      <button class="choice-button" data-choice="✊石頭">✊ 石頭</button>
+      <button class="choice-button" data-choice="✋布">✋ 布</button>
+    </div>
+    <div id="result"></div>
+    <button id="retryBtn">再來一次</button>
+  </div>
+</div>
+  
+
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    const game = document.getElementById('game');
+    const timerDisplay = document.getElementById('timer');
+    const resultDisplay = document.getElementById('result');
+    const choices = document.querySelectorAll('.choice-button');
+    const retryBtn = document.getElementById('retryBtn');
+
+    let countdown;
+    let timeLeft = 3;
+    let clicked = false;
+    let gameCount = 0;
+
+    function startGame() {
+      startBtn.style.display = 'none';
+      game.style.display = 'block';
+      resultDisplay.textContent = '';
+      retryBtn.style.display = 'none';
+      clicked = false;
+      timeLeft = 3;
+      timerDisplay.textContent = `倒數：${timeLeft}`;
+
+      countdown = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = `倒數：${timeLeft}`;
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          if (!clicked) {
+            resultDisplay.textContent = '你超時了，輸了！';
+            showRetryButton();
+          }
+        }
+      }, 1000);
+    }
+
+    function play(userChoice) {
+  if (clicked) return;
+  clicked = true;
+  clearInterval(countdown);
+  gameCount++;
+
+  const options = ['✌剪刀', '✊石頭', '✋布'];
+  let computerChoice = options[Math.floor(Math.random() * 3)];
+  const random = Math.random();
+
+  if (gameCount > 10) {
+    if (random < 0.02) {
+      resultDisplay.textContent = `你出的是 ${userChoice}，電腦出的是降龍十八掌，你輸了！`;
+      showRetryButton();
+      return;
+    }
+    if (random < 0.04) {
+      resultDisplay.textContent = `你出的是 ${userChoice}，電腦出的是砸瓦魯多，你輸了！`;
+      showRetryButton();
+      return;
+    }
+    if (random < 0.06) {
+      resultDisplay.textContent = `你出的是 ${userChoice}，電腦出的是星爆氣流斬，你輸了！`;
+      showRetryButton();
+      return;
+    }
+    if (random < 0.088) {
+      resultDisplay.textContent = `你出的是 ${userChoice}，電腦出的是龜派氣功，你輸了！`;
+      showRetryButton();
+      return;
+    }
+    if (random < 0.10) {
+      resultDisplay.textContent = `你出的是 ${userChoice}，電腦出的是愛情破顏拳，你輸了！`;
+      showRetryButton();
+      return;
+    }
+  }
+
+
+      let result;
+      if (userChoice === computerChoice) {
+        result = '我們平手！';
+      } else if (
+        (userChoice === '✌剪刀' && computerChoice === '✋布') ||
+        (userChoice === '✊石頭' && computerChoice === '✌剪刀') ||
+        (userChoice === '✋布' && computerChoice === '✊石頭')
+      ) {
+        result = '你贏了！';
+      } else {
+        result = '你輸了！';
+      }
+
+      resultDisplay.textContent = `你出的是${userChoice}，電腦出的是${computerChoice}，${result}`;
+      showRetryButton();
+    }
+
+    function showRetryButton() {
+      retryBtn.style.display = 'inline-block';
+    }
+
+    function resetGame() {
+      resultDisplay.textContent = '';
+      retryBtn.style.display = 'none';
+      clicked = false;
+      timeLeft = 3;
+      timerDisplay.textContent = `倒數：${timeLeft}`;
+
+      countdown = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = `倒數：${timeLeft}`;
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          if (!clicked) {
+            resultDisplay.textContent = '你超時了，輸了！';
+            showRetryButton();
+          }
+        }
+      }, 1000);
+    }
+
+    startBtn.addEventListener('click', startGame);
+    retryBtn.addEventListener('click', resetGame);
+    choices.forEach(btn => {
+      btn.addEventListener('click', () => play(btn.dataset.choice));
+    });
+  </script>
+
+
+
+        
+    </main>
+
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2025 - 文章存檔</p>
+    </div>
+</footer>
+
+    
+</body>
+
+</html>

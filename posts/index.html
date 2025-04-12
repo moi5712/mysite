@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+      
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts</title>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="http://localhost:1313/og/og-image-a74dbcb35ee06db2c5314e7ff0d9268f.svg" />
+<meta property="og:image:type" content='image/svg&#43;xml' />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/posts/" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Posts" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="http://localhost:1313/og/og-image-a74dbcb35ee06db2c5314e7ff0d9268f.svg" />
+<meta name="author" content="" />
+    <meta name="description" content="" />
+
+    <link rel="preload" href="/fonts/Newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Newsreader-italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script src="/js/init-darkmode.js" defer></script>
+    <script src="/js/darkmode.js" defer></script>
+    <script src="/js/footnotes.js" defer></script>
+</head>
+
+
+<body>  
+
+  <header>
+    <div>
+        <h1>
+            <a href="http://localhost:1313/">文章存檔</a>
+        </h1>
+        <div class="header-controls">
+            <div class="toggle-switch">
+                <input 
+                    type="checkbox" 
+                    id="darkModeToggle" 
+                    class="toggle-input"
+                    aria-label="Toggle dark mode"
+                />
+                <label for="darkModeToggle" class="toggle-label">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="nav">              
+        
+        <a href="/">Home/</a>
+      
+        <a href="/about/">About/</a>
+      
+        <a href="/posts/">Posts/</a>
+                   
+    </div>
+
+
+</header>
+
+
+  <main class="content-wrapper">
+    <article class="content-container">
+      <h2>所有文章</h2>
+
+      <div id="sort-bar">
+    <label>總文章數：4</label>
+    <div id="sortby">
+        <label>排序方式：</label>
+        <select id="sortSelect">
+        <option value="newest">最新</option>
+        <option value="oldest">最舊</option>
+        </select>
+    </div>
+</div>
+
+
+<style>
+#sort-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;  
+  line-height: 1.6;
+  margin-bottom: 0px;
+}
+
+#sortby {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+#sortSelect {
+  color: var(--text-color);
+  width: auto;
+  font-size: 1em;
+  background-color: transparent;  
+  border: none;  
+  padding: 0 10px;  
+  margin: 0;  
+  line-height: 1.6;  
+  appearance: none;  
+  -webkit-appearance: none;  
+  -moz-appearance: none;  
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sortSelect = document.getElementById('sortSelect');
+    const postList = document.getElementById('postList');
+
+    sortSelect.addEventListener('change', () => {
+      const posts = Array.from(postList.children);
+      posts.sort((a, b) => {
+        const dateA = new Date(a.dataset.date);
+        const dateB = new Date(b.dataset.date);
+        return sortSelect.value === 'newest' ? dateB - dateA : dateA - dateB;
+      });
+      posts.forEach(post => postList.appendChild(post));
+    });
+  });
+</script>
+
+      <hr class="custom-line">
+
+      <div class="post-list" id="postList">
+        
+          <div class="list" data-date="2025-04-08 13:47:56 &#43;0800 CST">
+            <a href="http://localhost:1313/posts/example/" class="list-title">範例文章</a>
+            <section class="tags">             
+              
+                <span><span class="tag"><a href="/tags/tag1">#tag1</a></span></span>
+              
+                <span><span class="tag"><a href="/tags/tag2">#tag2</a></span></span>
+              
+            </section>
+            <p class="author-date">April 8, 2025</p>
+          </div>
+        
+          <div class="list" data-date="2025-04-08 01:17:31 &#43;0800 CST">
+            <a href="http://localhost:1313/posts/01/" class="list-title">沖土隨筆1</a>
+            <section class="tags">             
+              
+                <span><span class="tag"><a href="/tags/%E5%90%8C%E4%BA%BA">#同人</a></span></span>
+              
+                <span><span class="tag"><a href="/tags/%E9%8A%80%E9%AD%82">#銀魂</a></span></span>
+              
+                <span><span class="tag"><a href="/tags/%E6%B2%96%E5%9C%9F">#沖土</a></span></span>
+              
+            </section>
+            <p class="author-date">April 8, 2025</p>
+          </div>
+        
+          <div class="list" data-date="2025-04-08 01:01:10 &#43;0800 CST">
+            <a href="http://localhost:1313/posts/%E6%BC%AB%E7%95%AB/" class="list-title">漫畫</a>
+            <section class="tags">             
+              
+                <span><span class="tag"><a href="/tags/%E5%8E%9F%E5%89%B5">#原創</a></span></span>
+              
+                <span><span class="tag"><a href="/tags/%E6%BC%AB%E7%95%AB">#漫畫</a></span></span>
+              
+            </section>
+            <p class="author-date">April 8, 2025</p>
+          </div>
+        
+          <div class="list" data-date="2025-04-05 01:17:31 &#43;0800 CST">
+            <a href="http://localhost:1313/posts/%E6%AD%8C%E8%A9%9E/" class="list-title">ONE OK ROCK - Decision　歌詞【中文/英文/日文】翻譯</a>
+            <section class="tags">             
+              
+                <span><span class="tag"><a href="/tags/%E6%AD%8C%E8%A9%9E">#歌詞</a></span></span>
+              
+                <span><span class="tag"><a href="/tags/%E7%BF%BB%E8%AD%AF">#翻譯</a></span></span>
+              
+            </section>
+            <p class="author-date">April 5, 2025</p>
+          </div>
+        
+      </div>
+    </article>
+  </main>
+
+  <style>
+    .custom-line {
+      border: none;
+      border-top: 1px solid var(--text-color);
+      margin-top: 5px;
+      margin-bottom: 2em ;
+      width: 100%;
+    }
+    hr:after {
+      display: none;
+    }
+
+    .list {
+      margin-bottom: 2rem;  
+    }
+
+    .list-title {
+      font-weight: 500;
+      font-size: 1em;
+      line-height: 1.5;
+    }
+  </style>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 - 文章存檔</p>
+    </div>
+</footer>
+
+
+
+</body>
+
+</html>

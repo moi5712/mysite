@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 文章存檔</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on 文章存檔</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 08 Apr 2025 13:47:56 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>範例文章</title>
+      <link>http://localhost:1313/posts/example/</link>
+      <pubDate>Tue, 08 Apr 2025 13:47:56 +0800</pubDate>
+      <guid>http://localhost:1313/posts/example/</guid>
+      <description>&lt;p&gt;This article offers a sample of basic Markdown&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a &lt;strong&gt;Hugo&lt;/strong&gt; theme.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>沖土隨筆1</title>
+      <link>http://localhost:1313/posts/01/</link>
+      <pubDate>Tue, 08 Apr 2025 01:17:31 +0800</pubDate>
+      <guid>http://localhost:1313/posts/01/</guid>
+      <description>&lt;p&gt;土方自從跟隨近藤一行人來到江戶後，就一直保有寫信的習慣，雖然武州已經沒有他認識的人了，按理來說是這樣。&lt;/p&gt;&#xA;&lt;p&gt;那些信一直都沒有被寄出去，只是默默地躺在屯所的某個角落。&lt;/p&gt;&#xA;&lt;p&gt;某天沖田又在混水摸魚，就這樣摸進土方的房間，邊尋思著著怎麼惡作劇，邊拉開角落櫃子裡的抽屜，卻一眼瞥見那疊一直沒寄出的，已經落灰的，寫著熟悉的名字的信紙——三葉。&lt;/p&gt;&#xA;&lt;p&gt;沖田先是心中一顫，接著便旁若無人地讀了起來，甚至沒注意到這時的副長已經站在他身後了。注意到沖田的土方也沒有多說什麼，畢竟他也沒想到沖田會看到這些。沖田卻有些冷靜不下來了，啪地一聲把那疊紙凌亂的拍在地上就快步走土方的房間。&lt;/p&gt;&#xA;&lt;p&gt;土方也是第一次遇到不用他開口就自己乖乖回崗位的情況，一時也不知作何反應，愣了半晌才回過神來，趕緊把總悟留下來的爛攤子收拾了。三葉死後，土方就沒有再寫信了。&lt;/p&gt;&#xA;&lt;p&gt;沖田有時候會偷偷摸摸地溜進去土方的房間讀那些信。內容不外乎是毫無新意的日常問候以及近況報告，那些他期待或者害怕的內容一丁點都沒有出現，無聊得他早就忘記看這些的目的到底是什麼了，只是，原因不明的躁動次次鬼使神差地領著他回到那裡。&lt;/p&gt;&#xA;&lt;p&gt;有天沖田回到自己的寢室時，發現桌上赫然放著一疊信紙。&lt;/p&gt;&#xA;&lt;p&gt;別偷偷摸摸地看了，拿去吧。反正留著也沒用了。他是這樣說的。&lt;/p&gt;&#xA;&lt;p&gt;你愛她嗎？我問。&lt;/p&gt;&#xA;&lt;p&gt;或許吧。&lt;/p&gt;&#xA;&lt;p&gt;為什麼不寄出那些信？&lt;/p&gt;&#xA;&lt;p&gt;小鬼不會懂的。他吐了一口煙。好臭。&lt;/p&gt;&#xA;&lt;p&gt;如果所謂的大人就是像你這樣的話，我還不如當一輩子小鬼。&#xA;我轉身出門，沒有再回來。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>漫畫</title>
+      <link>http://localhost:1313/posts/%E6%BC%AB%E7%95%AB/</link>
+      <pubDate>Tue, 08 Apr 2025 01:01:10 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E6%BC%AB%E7%95%AB/</guid>
+      <description>&lt;img src=&#34;http://localhost:1313/img/%e6%8f%92%e5%9c%9675.png&#34;&gt;</description>
+    </item>
+    <item>
+      <title>ONE OK ROCK - Decision　歌詞【中文/英文/日文】翻譯</title>
+      <link>http://localhost:1313/posts/%E6%AD%8C%E8%A9%9E/</link>
+      <pubDate>Sat, 05 Apr 2025 01:17:31 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E6%AD%8C%E8%A9%9E/</guid>
+      <description>&lt;p&gt;來源&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;ONE OK ROCK - Decision&lt;/p&gt;&#xA;&lt;p&gt;Another day, another life&lt;br&gt;&#xA;違う日も、違う人生も&lt;br&gt;&#xA;另一天，另一種生活&lt;/p&gt;&#xA;&lt;p&gt;I wanna live it to the fullest&lt;br&gt;&#xA;僕はいつだって全力で生きていたい&lt;br&gt;&#xA;我想活得最充實&lt;/p&gt;&#xA;&lt;p&gt;A little work, a lotta play&lt;br&gt;&#xA;少し辛いこともあれば、たくさん楽しいこともある&lt;br&gt;&#xA;一點工作，多玩&lt;/p&gt;&#xA;&lt;p&gt;Alright&lt;br&gt;&#xA;それでいいよね&lt;br&gt;&#xA;好吧&lt;/p&gt;&#xA;&lt;p&gt;足跡たどり行き着く場所&lt;br&gt;&#xA;なぞるだけが僕の人生じゃない&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;ll never be as young as we are now&lt;br&gt;&#xA;僕らは今この瞬間よりも若くはいられないから&lt;br&gt;&#xA;我們永遠不會像現在這樣年輕&lt;/p&gt;&#xA;&lt;p&gt;You say it&amp;rsquo;s alright&lt;br&gt;&#xA;君は「それでいいよ」、&lt;br&gt;&#xA;你說：沒關係&lt;/p&gt;&#xA;&lt;p&gt;You say it&amp;rsquo;s OK&lt;br&gt;&#xA;「合ってるよ」って言うけどさ、&lt;br&gt;&#xA;你說：沒關係&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s up to you, is that the truth?&lt;br&gt;&#xA;君の考えでしょ？本当に心からそう思うの？&lt;br&gt;&#xA;這取決於你，這是事實嗎？&lt;/p&gt;&#xA;&lt;p&gt;Tell me&lt;br&gt;&#xA;教えてよ&lt;br&gt;&#xA;告訴我&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

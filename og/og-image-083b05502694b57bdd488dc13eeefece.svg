@@ -1,0 +1,31 @@
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+        <style>
+            @font-face {
+              font-family: 'Newsreader';
+              src: url('/fonts/Newsreader.woff2') format('woff2');
+            }
+            .title, .description {
+              font-family: 'Newsreader', serif;
+              fill: #141413;
+              text-anchor: start;
+              line-height: 1.1;
+            }
+        </style>
+        <rect width="1200" height="630" fill="#f0efea" />
+        <foreignObject x="80" y="200" width="840" height="300">
+            <div xmlns="http://www.w3.org/1999/xhtml">
+                <div style="font-family: Newsreader, serif; font-size: 78px; font-weight: 600; margin-bottom: 20px; word-wrap: break-word;">ONE OK ROCK - Decision　歌詞【中文/英文/日文】翻譯</div>
+                <div style="font-family: Newsreader, serif; font-size: 70px; font-weight: 400; word-wrap: break-word;"><p>來源<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>ONE OK ROCK - Decision</p>
+<p>Another day, another life<br>
+違う日も、違う人生も<br>
+另一天，另一種生活</p>
+<p>I wanna live it to the fullest<br>
+僕はいつだって全力で生きていたい<br>
+我想活得最充實</p>
+<p>A little work, a …</p></div>
+            </div>
+        </foreignObject>
+    </svg>
+    

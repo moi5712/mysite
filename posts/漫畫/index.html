@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-tw">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <link rel="stylesheet" href="/css/styles.css">
+</head>
+      
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>漫畫</title>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<meta property="og:title" content="漫畫" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="http://localhost:1313/og/og-image-b594e2850ab3adb4dd03f2985e825bea.svg" />
+<meta property="og:image:type" content='image/svg&#43;xml' />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://localhost:1313/posts/%E6%BC%AB%E7%95%AB/" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="漫畫" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="http://localhost:1313/og/og-image-b594e2850ab3adb4dd03f2985e825bea.svg" />
+<meta name="author" content="" />
+    <meta name="description" content="" />
+
+    <link rel="preload" href="/fonts/Newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Newsreader-italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script src="/js/init-darkmode.js" defer></script>
+    <script src="/js/darkmode.js" defer></script>
+    <script src="/js/footnotes.js" defer></script>
+</head>
+
+
+<body oncontextmenu ="return false">
+
+    <header>
+    <div>
+        <h1>
+            <a href="http://localhost:1313/">文章存檔</a>
+        </h1>
+        <div class="header-controls">
+            <div class="toggle-switch">
+                <input 
+                    type="checkbox" 
+                    id="darkModeToggle" 
+                    class="toggle-input"
+                    aria-label="Toggle dark mode"
+                />
+                <label for="darkModeToggle" class="toggle-label">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="nav">              
+        
+        <a href="/">Home/</a>
+      
+        <a href="/about/">About/</a>
+      
+        <a href="/posts/">Posts/</a>
+                   
+    </div>
+
+
+</header>
+
+     
+
+    <main class="content-wrapper">
+      <a href="../" class="text-button">回上一頁</a>
+        <article class="content-container">
+
+          <h2>漫畫</h2>
+          <h5></h5>
+          <p class="author-date">
+                <time datetime="2025-04-08 01:01:10 &#43;0800 CST">April 8, 2025</time>
+          </p>
+          <section>
+            
+              <div>
+                
+                  <span class="tag"><a href="/tags/%E5%8E%9F%E5%89%B5">#原創</a></span>
+                
+                  <span class="tag"><a href="/tags/%E6%BC%AB%E7%95%AB">#漫畫</a></span>
+                
+              </div>                  
+                         
+          </section>
+
+
+            <div class="bolg-content"><img src="/img/%e6%8f%92%e5%9c%9675.png">
+
+
+
+            </div>
+           <p class="wordcount">
+            words:
+            0
+           </p>
+        </article>        
+    </main>
+
+        <div class="backtotop-wrapper">
+          <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Top</button>
+        </div>
+
+        
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2025 - 文章存檔</p>
+    </div>
+</footer>
+
+
+<style>
+  .backtotop-wrapper{
+    position: fixed;  
+    width: 100%;   
+    max-width: var(--content-max-width); 
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-color: #63636300;   
+    border: none;
+    display: flex;   
+    justify-content: flex-end;  
+     
+  }
+
+  #backToTop {
+    width: 60px;
+    height: 60px; 
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border:0px;
+    border-radius: 5px;
+    font-family: "Newsreader", "游明朝", serif;  
+    opacity: 0;
+    display: none;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  #backToTop.show {
+    opacity: 0.6;
+    display: block;
+
+  }
+
+  #backToTop:hover {
+    opacity: 0.8;
+  }
+
+  .wordcount {  
+  font-size: 0.9em;
+  color: #767676;
+  }
+
+  .bolg-content {
+  user-select: text;
+  }
+</style>
+
+<script>
+const btn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    btn.classList.add("show");
+  } else {
+    btn.classList.remove("show");
+  }
+});
+</script>
+
+</body>
+
+</html>
